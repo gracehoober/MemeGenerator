@@ -8,19 +8,20 @@
 </head>
 
 <body>
+  <form action="" method="post" class="meme-gen">
+      <lable for="imgURL">Image URL</lable>
+        <input type="url" id="imgURL">
 
-  <div class = "meme-gen">
-    <lable>Image URL</lable>
-      <input type="text" id="imgURL">
+      <lable for="topText">Top of Meme</lable>
+        <input type="text" id="topText" placeholder="optional">
 
-    <lable>Top of Meme</lable>
-      <input type="text" id="topText">
+      <lable for="bottomText">Bottom of Meme</lable>
+        <input type="text" id="bottomText" placeholder="optional">
 
-    <lable>Bottom of Meme</lable>
-      <input type="text" id="bottomText">
-    <canvas id="meme-list"></canvas>
-  </div>
-
+      <label for="button"></label>
+        <button type="submit">Generate Meme</button>
+  </form>
+  <div id="meme-list"></div>
   <script src = main.js></script>
 </body>
 </html>
