@@ -1,37 +1,48 @@
 
-/*html elements are in the javascript with these variables*/
-const form = document.querySelector("#meme-gen");
-const imageURL = document.querySelector("#imgURL");// refers to imgURL input field
-const topText = document.querySelector("#topText");// .querySelector returns the first element withing the doc that matches the specified selector(can be classes or elements)
-const bottomText = document.querySelector("#bottomText");
-const button = document.querySelector("button");
-const memeList = document.querySelector("#meme-list");
-let image;
+let form = document.querySelector("form");
 
-/*function to create meme and put it on the page
-  I:form data
-  O:div of meme added to meme-list div
-  can use append or appendChild: https://developer.mozilla.org/en-US/docs/Web/API/Element/append
-*/
-function createMeme(form){
-  //create new div
+function displayMeme(e){
+  e.preventDefault();
+  let memeList = document.querySelector("#meme-list");
+  let image = document.querySelector("#imgURL").value;
+  let topText = document.querySelector("#topText").value;
+  let bottomText = document.querySelector("#bottomText").value;
+
   let memeDiv = document.createElement("div");
-  //add image to div
-  memeDiv.append(imageURL)
-  //add texts to meme div
-  memeDiv.append(topText)
+  let imageContainer = document.createElement("img")
+  imageContainer.classList.add("photo")
+  imageContainer.src = image;
+
+  memeDiv.append(imageContainer);
+  memeDiv.append(topText);
   memeDiv.append(bottomText);
-  //add created meme to div in html
-  memeList.appendChild(memeDiv);
+  memeList.append(memeDiv);
 }
 
+
+
 //function to remove meme from page
+// function removeMeme(){
+
+// }
 
 //event listeners
-form.addEventListener("submit", () => {
-})
+form.addEventListener("submit", displayMeme)
+// memeList.addEventListener("click", removeMeme)
 
+/*
+  https://developer.mozilla.org/en-US/docs/Web/API/Element/append
+  https://www.youtube.com/watch?v=xR6d7CkXlPs add elements dynamically
+  https://www.youtube.com/watch?v=R1liBYYF9k4 add elements dynamically with an action like click or submit
 
+*/
+/* NOT SURE WHY THIS WASNT WORKING WHEN APPENDED TO A DIV
+  let memeFramework = `<div class="wrapper">
+                        <img src="" alt="">
+                        <div class="textAbove"></div>
+                        <div class="textBelow"></div>
+                      </div>`;
+*/
 
 
 

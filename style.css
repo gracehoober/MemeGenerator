@@ -2,7 +2,7 @@ body{
   height: 100vh;
   width: auto;
 }
-.meme-gen {
+form {
   margin: 20px;
   width:600px;
   font-family: sans-serif;
@@ -10,12 +10,12 @@ body{
   background-color: lightgreen;
   padding: 20px;
 }
-.meme-gen label{
+form label{
   display: block;
   font-weight: bold;
   margin: 10px;
 }
-.meme-gen input {
+form input {
   width: 100%;
   box-sizing: border-box;
   margin:20px 0px;
