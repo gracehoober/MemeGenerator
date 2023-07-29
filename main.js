@@ -1,6 +1,7 @@
 
 let form = document.querySelector("form");
-let idAttribute = 1;
+let memeNumber = 1;
+
 function displayMeme(e){
   e.preventDefault();
   let memeList = document.querySelector("#meme-list");
@@ -10,7 +11,7 @@ function displayMeme(e){
 
   let memeDiv = document.createElement("div");
   memeDiv.classList.add("meme-content")
-  memeDiv.setAttribute("id", idAttribute.toString() + "meme")
+  memeDiv.setAttribute("id","meme" + memeNumber)
 
   let imageContainer = document.createElement("img");
   imageContainer.classList.add("photo");
@@ -35,21 +36,13 @@ function displayMeme(e){
   //memeDiv.append(removeDiv)
   memeList.append(memeDiv);
 
-//function to remove meme from page (parent is memeList, child is memeContent)
-let memeContent = document.querySelector(".meme-content");
-memeContent.addEventListener("click", function(){
-  memeList.removeChild(memeContent)
-});
+  //function to remove meme from page (parent is memeList, child is memeContent)
+  let memeContent = document.querySelector("#meme" + memeNumber);
+  memeContent.addEventListener("click", function(){
+    memeList.removeChild(memeContent)
+  });
+  memeNumber++;
 };
-
-
-
-//function to clear input feilds
-function clearInputs(){
-
-};
-
-//event listeners
 form.addEventListener("submit", displayMeme);
 
 
