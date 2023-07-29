@@ -25,11 +25,6 @@ function displayMeme(e){
   bottomTextDiv.classList.add("text-below");
   bottomTextDiv.append(bottomText)
 
-  // let removeDiv = document.createElement('div');
-  // removeDiv.classList.add("remove-div");
-  // let removeText = document.createTextNode("Delete Meme")
-  // removeDiv.appendChild(removeText);
-
   memeDiv.append(imageContainer);
   memeDiv.append(topTextDiv);
   memeDiv.append(bottomTextDiv);
@@ -42,8 +37,14 @@ function displayMeme(e){
     memeList.removeChild(memeContent)
   });
   memeNumber++;
+  //clear input feilds
+  clearInputs();
 };
 form.addEventListener("submit", displayMeme);
+
+function clearInputs(){
+  form.reset();
+};
 
 
 /*
