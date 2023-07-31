@@ -119,6 +119,6 @@ button{
 
 }
 .photo{
-  max-height: 300px;
+  height: 300px;
   width:auto;
 }
