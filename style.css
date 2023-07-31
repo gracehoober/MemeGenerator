@@ -10,7 +10,6 @@ body{
   font-family: DS9-Regular;
   background: url(https://www.syfy.com/sites/syfy/files/2019/04/deepspaceninehero.jpg) no-repeat center center fixed;
   opacity: 0.8;
-
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -56,7 +55,7 @@ form input {
   width:90vw;
   height: auto;
   opacity: 1;
-  display: inherit;
+  display: flex;
   flex-direction: row;
   justify-content: center;
   margin: 20px;
@@ -69,7 +68,8 @@ form input {
   width:auto;
   opacity: 1;
   margin: 10px;
-  overflow:hidden;
+  /* overflow:hidden; */
+  border: #fdb208 1px solid;
 }
 .meme-content:hover{
   opacity: 0.66;
@@ -90,10 +90,10 @@ form input {
 }
 .text-below{
   position: absolute;
-  bottom:0;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
+  bottom: 10%;
+  left:50%;
+  transform: translate(-50%, 0%);
+
 }
 .photo{
   max-height: 300px;
